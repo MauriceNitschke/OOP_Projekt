@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<script>
+		//window.location='http:\\www.google.de';
+		
+		</script>
+		<link rel="stylesheet" href="styles.css">
+
+		<title>Buchungstool</title>
+
+		<a href="file:///C:/Users/Maurice/Documents/test.html" id="loggedIn"></a>
+		<a href="file:///C:/Users/Maurice/Documents/newAcc.html" id="newUser"></a>
+
+		<script>
+			function getData(form) {
+			
+			var data = form.username.value;
+			var password = form.password.value;
+			var result = java.login(data, password);
+			
+			
+			
+			if (result == 0) {
+			document.getElementById("result").innerHTML="Access granted!";
+			window.location='file:///C:/Users/Maurice/Documents/test.html';
+			document.getElementById("loggedIn").click();
+			
+			
+
+			} else {
+			document.getElementById("result").innerHTML="Password or Username is wrong. Please try again!";
+			}
+			
+			}
+
+
+			function newAcc() {
+			document.getElementById("newUser").click();
+			}
+			</script>
+
+	</head>
+	
+	<body>
+		<p>Login:</p>
+		<form action="action_page.php">
+  			Username: <input type="text" name="username" value=""><br>
+ 			Password: <input type="password" name="password" value=""><br>
+  		<input type="submit" value="Submit" onClick="getData(this.form)">
+
+		<p id="result"></p>
+		
+	</form>
+
+	  	
+
+	<p>If you don't have an account create one here !</p>
+	<button type="button" onClick="newAcc()">Create a new Account here !</button>
+		
+	</body>
+</html>
